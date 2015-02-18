@@ -1,0 +1,298 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis-Styled CV
+% LaTeX Template
+% Version 1.0 (22/2/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\documentclass{scrartcl}
+
+%\reversemarginpar % Move the margin to the left of the page 
+
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
+
+\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
+\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
+
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{chronology}
+\usepackage{amssymb}
+\usepackage{sparklines}
+\renewcommand{\event}[3][e]{%
+  \pgfmathsetlength\xstop{(#2-\theyearstart)*\unit}%
+  \ifx #1e%
+    \draw[fill=black,draw=none,opacity=0.5]%
+      (\xstop, 0) circle (.2\unit)%
+      node[opacity=1,rotate=45,right=.2\unit] {#3};%
+  \else%
+    \pgfmathsetlength\xstart{(#1-\theyearstart)*\unit}%
+    \draw[fill=black,draw=none,opacity=0.5,rounded corners=.1\unit]%
+      (\xstart,-.1\unit) rectangle%
+      node[opacity=1,rotate=45,right=.2\unit] {#3} (\xstop,.1\unit);%
+  \fi}%
+
+
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}} % Font color of your name at the top
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\hypersetup{colorlinks, breaklinks, urlcolor=Maroon, linkcolor=Maroon,pdfborder={0 0 0}} % Set link colors
+
+\newlength{\datebox}\settowidth{\datebox}{Spring 2011} % Set the width of the date box in each block
+
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textcolor{Maroon}{\textit{#1}}}\hspace{1.5em} #2 #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
+\vspace{0.5em}} % Add some white space after each new entry
+
+\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}} % Define a command for descriptions of each entry - change spacing and font sizes here
+\newcommand{\doneit}{\textcolor{Maroon}{$\odot$}}
+\newcommand{\itemit}{\textcolor{Maroon}{$\odot$ \,}}
+
+\usepackage{xspace}
+\newcommand{\TikZ}{Ti\textit{k}Z\xspace}
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{document}
+
+\thispagestyle{empty} % Stop the page count at the bottom of the first page
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	NAME AND CONTACT INFORMATION SECTION
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\begin{cv}{\spacedallcaps{Mark Hendry Olson}}\vspace{1.5em} % Your name
+
+\noindent\spacedlowsmallcaps{Personal Information}\vspace{0.5em} % Personal information heading
+
+\NewEntry{}{\textit{Born in Kirkland Lake, Canada,}}{} % Birthplace and date
+
+\NewEntry{}{\textit{Citizen of}}{Canada \& Sweden} % Birthplace and date
+
+\NewEntry{email}{\href{mailto:mark@hendryolson.com}{mark@hendryolson.com}} % Email address
+
+\NewEntry{website}{\href{http://hendryolson.com}{http://hendryolson.com}} % Personal website
+
+%\NewEntry{phone}{} % Phone number(s)
+
+\vspace{1em} % Extra white space between the personal information section and goal
+
+%\noindent\spacedlowsmallcaps{Goal}\vspace{1em} % Goal heading, could be used for a quotation or short profile instead
+
+%\Description{During 9 years of teaching, I have been developing modular step-by-step instructional frameworks that provide scaffolding for answering essential questions in Mathematics. Each unique procedure is structured by topic dependencies in Mathematics and serve as a formative feedback conduit that may help students towards enduring understanding. }\vspace{1em} % Goal text
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	WORK EXPERIENCE
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\noindent\spacedlowsmallcaps{Work Experience}\vspace{-0.5cm}
+
+\NewEntry{}{\begin{center}\begin{chronology}[2]{2005}{2015}{0.85\textwidth}
+\event[\decimaldate{21}{7}{2005}]{\decimaldate{21}{7}{2006}}{Northern College}
+\event[\decimaldate{21}{7}{2006}]{\decimaldate{20}{7}{2008}}{Engelska Skolan Täby}
+\event[\decimaldate{21}{7}{2008}]{\decimaldate{12}{8}{2014}}{Engelska Gymnasiet}
+\event[\decimaldate{13}{8}{2014}]{\decimaldate{18}{02}{2015}}{\textcolor{Maroon}{Stockholms Stad}}
+\end{chronology}
+\end{center}
+}
+
+\NewEntry{2014-}{IB MYP \& DP Teacher of Mathematics}
+
+\Description{\MarginText{\vfill \includegraphics[width=0.2\textwidth]{stockholmstad}}\itemit attended the IB MYP cat. I workshop (fall 2014) \newline
+}
+
+\Description{\textsc{Courses Taught}
+\begin{center}
+\begin{tabular}{l|c}
+\cline{2-2}
+ & \textbf{14-15} \\
+\hline
+
+Math 2c & \doneit \\
+
+Math MYP 3 & \doneit \\
+
+Math MYP 4 & \doneit \\
+
+Math IB SL & \doneit \\
+
+\end{tabular}
+\end{center}}
+
+\NewEntry{2010-2014}{Head of Mathematics Department}
+
+\Description{\MarginText{\vfill \includegraphics[width=0.2\textwidth]{IEGSLogoBW}}\itemit managing 12 mathematics' courses, 35 classes and 9 teachers in 4 different programs (Natural Science, Social Science, Economics and International Baccalaureate) \newline
+\itemit designed and maintain the department's GoogleDocs grading system that manages the summative assessment results of over 800 students each year  \newline
+\itemit mediating student/teacher/parent(s) academic concerns  \newline
+\itemit overseeing and organizing prövning for all active students \newline
+\itemit organizing 12 national tests per academic year and responsible for submitting the bi-annual reports to Statistiska Centralbyrån (SCB)  \newline
+\itemit implemented a one-to-one TI-Nspire calculator loan program for all students enrolled in the International Baccalaureate programme
+}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\NewEntry{2008-2014}{Upper-Secondary Teacher of Mathematics}
+
+\Description{\MarginText{}\itemit mentoring students in years one, two and three \newline
+\itemit attended the IB Mathematics using TI-Nspire cat. III workshop (fall 2013) \newline 
+\itemit attended the IB Mathematics SL cat. I workshop (fall 2012) \newline 
+\itemit Guldäpplet nominee (2010) \newline  
+\itemit IT coordinator (2008-2009)  }
+
+\newpage
+
+\Description{\textsc{Courses Taught}
+\begin{center}
+\begin{tabular}{l|cccccc}
+\cline{2-7}
+ & \textbf{08-09} & \textbf{09-10 }& \textbf{10-11} & \textbf{11-12} & \textbf{12-13} & \textbf{13-14}\\
+\hline
+Math A/1c & \doneit & \doneit & \doneit & \doneit & \doneit & \doneit\\
+
+Math B/2c & \doneit & \doneit & \doneit & \doneit & \doneit & \doneit\\
+
+Math C/3c & \doneit & \doneit & \doneit & \doneit & \doneit & \\
+
+Math D/4 & \doneit & \doneit & \doneit & \doneit & \doneit & \\
+
+Math E/5 &  &  & \doneit & \doneit & \doneit & \\
+
+Math IB base year & &  &  &  & \doneit & \doneit\\
+
+Math IB SL &  &  &  & &  & \doneit\\
+
+Physics A &  &  & \doneit &  &  & \\
+
+\end{tabular}
+\end{center}}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\NewEntry{2006--2008}{Compulsory School Teacher of Mathematics}
+
+\Description{\MarginText{\vfill \includegraphics[width=0.2\textwidth]{IESLogoBW}}\textsc{Courses Taught}
+
+\begin{tabular}{l|cc}
+\cline{2-3}
+ & \textbf{06-07} & \textbf{07-08}\\
+\hline
+Year 7 Mathematics & \doneit & \doneit\\
+Year 8 Mathematics & & \doneit 
+\end{tabular}
+}
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\NewEntry{2005--2006}{College Instructor of Mathematics}
+
+\Description{\MarginText{\vfill \includegraphics[width=0.2\textwidth]{NorthernCollegeLogoBW}}\textsc{School of Welding Engineering Technology} \newline
+\itemit taught Mathematics I, II, III, Calculus I and Mechanics/Statics in both the Welding Engineering Technician \& Technologist programs \newline
+\itemit taught Mathematics and Precision Measurement II in the Mechanical Technician - Welding Fitter program   }
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	EDUCATION
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\spacedlowsmallcaps{Education}\vspace{1em}
+
+\NewEntry{May 2005}{M.A. Education, Lindenwood University}
+%\NewEntry{2004-2005}{M.A. Education, Lindenwood University}
+
+\Description{\MarginText{\vfill \includegraphics[width=0.2\textwidth]{LindenwoodUniversityLogoBW}}GPA: 4.0/4.0 \newline 
+\textit{Course-based Master's degree}\newline
+\itemit resident director Guffey Hall\newline
+}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\NewEntry{May 2004}{B.A., Lindenwood University}
+%\NewEntry{2001-2004}{B.A., Lindenwood University}
+
+\Description{\MarginText{}GPA: 3.75/4.0 \newline 
+Major: \textit{Mathematics}\newline
+\itemit successfully completed teacher education program \newline
+\itemit CBASE (\textsc{passed}) \& PRAXIS II Mathematics Content Knowledge (\textsc{passed}) \newline
+\itemit swimming scholarship (2001--2002) \newline
+\itemit resident director Guffey Hall (2002--2004)\newline
+\itemit student teacher at St. Charles High School (Jan 2004--May 2004)}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\vspace{1em} % Extra space between major sections
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	COMPUTER SKILLS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\spacedlowsmallcaps{Computer Skills}\vspace{1em}
+
+\Description{\MarginText{Calculators}\textsc{TI-$n$spire CX/CAS}, \textsc{TI-89} \& \textsc{TI-84}}
+
+\Description{\MarginText{Software}\textsc{SageMath}, \textsc{Geogebra},  \textsc{FileMaker Pro}, \textsc{SchoolSoft}, \textsc{Managebac}, \textsc{Microsoft Office}, \textsc{GoogleDocs} \& \textsc{TextMate}}
+
+\Description{\MarginText{Languages}\textsc{\LaTeX\,},\textsc{\TikZ} \& \textsc{Markdown/HTML5/CSS3}}
+
+\Description{\MarginText{Operating Systems}\textsc{Mac iOS/OS}, \textsc{Windows} \& \textsc{Linux}}
+
+\vspace{1em} % Extra space between major sections
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	LANGUAGE SKILLS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\spacedlowsmallcaps{Languages}\vspace{1em}
+
+\newlength{\langbox} % Create a new length for the length of languages to keep them equally spaced
+\settowidth{\langbox}{English} % Length equals the length of "English" - if you have a longer language in your list put it here
+
+\Description{\MarginText{}\parbox{\langbox}{\textsc{English}}\ \  \ \ native speaker}
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+\Description{\parbox{\langbox}{\textsc{Swedish}}\ \  \ \ B1 }
+
+\vspace{-0.5em} % Negative vertical space to counteract the vertical space between every \Description command
+
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	INTERESTS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%\spacedlowsmallcaps{Interests}\vspace{1em}
+
+%\Description{\MarginText{} distance running\ \ \doneit\ \ RunSwim racing \ \ \doneit\ \ flight simulation\ \ \doneit\ \ travel}
+
+%\vspace{1em}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	REFERENCES
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+%\spacedlowsmallcaps{References}\vspace{1em}
+
+%\newlength{\refbox} % Create a new length for the length of languages to keep them equally spaced
+%\settowidth{\refbox}{Name} % Length equals the length of "English" - if you have a longer language in your list put it here
+
+%\Description{\parbox{\refbox}{\textsc{NAME}} \href{mailto:email}{email}, phone}
+%\Description{\parbox{\refbox}{\textsc{NAME}} \href{mailto:email}{email}, phone}
+
+\end{cv}
+
+\end{document}
